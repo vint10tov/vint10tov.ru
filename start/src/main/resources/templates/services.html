@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v10tov.ru</title>
+    <link rel="shortcut icon" href="./static/img/favicon.ico" type="image/x-icon" th:href="@{/img/favicon.ico}">
+    <link href="./static/css/header.css" rel="stylesheet" th:href="@{/css/header.css}"/>
+    <link href="./static/css/footer.css" rel="stylesheet" th:href="@{/css/footer.css}"/>
+    <link href="./static/css/services.css" rel="stylesheet" th:href="@{/css/services.css}"/>
+    <link href="./static/css/header-gadget.css" rel="stylesheet" th:href="@{/css/header-gadget.css}"/>
+    <link href="./static/css/footer-gadget.css" rel="stylesheet" th:href="@{/css/footer-gadget.css}"/>
+    <link href="./static/css/services-gadget.css" rel="stylesheet" th:href="@{/css/services-gadget.css}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+<div th:insert="header :: header"></div>
+<section>
+    <div class="background">
+        <div class="section">
+            <div class="Links">
+                <a href="/services/price-electrician" class="link">
+                    <h3>Прайс на электромонтажные работы</h3>
+                </a>
+                <a href="/services/price-finishing" class="link">
+                    <h3>Прайс на отделочные работы</h3>
+                </a>
+                <a href="/services/price-plumbing" class="link">
+                    <h3>Прайс на сантехнические работы</h3>
+                </a>
+                <a href="/services/price-air-conditioners" class="link">
+                    <h3>Прайс на установку кондиционеров</h3>
+                </a>
+                <a href="/services/price-design" class="link">
+                    <h3>Прайс на проектирование</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<div th:insert="footer :: footer"></div>
+</body>
+</html>

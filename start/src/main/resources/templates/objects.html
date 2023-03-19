@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v10tov.ru</title>
+    <link rel="shortcut icon" href="./static/img/favicon.ico" type="image/x-icon" th:href="@{/img/favicon.ico}">
+    <link href="./static/css/header.css" rel="stylesheet" th:href="@{/css/header.css}"/>
+    <link href="./static/css/footer.css" rel="stylesheet" th:href="@{/css/footer.css}"/>
+    <link href="./static/css/objects.css" rel="stylesheet" th:href="@{/css/objects.css}"/>
+    <link href="./static/css/header-gadget.css" rel="stylesheet" th:href="@{/css/header-gadget.css}"/>
+    <link href="./static/css/footer-gadget.css" rel="stylesheet" th:href="@{/css/footer-gadget.css}"/>
+    <link href="./static/css/objects-gadget.css" rel="stylesheet" th:href="@{/css/objects-gadget.css}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+<div th:insert="header :: header"></div>
+<section>
+    <div class="background">
+        <div class="section">
+            <div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Object Name</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Completed</th>
+                        <th>Images</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="object : ${objects}">
+                        <td th:text="${object.name}"></td>
+                        <td th:text="${object.date}"></td>
+                        <td th:text="${object.description}"></td>
+                        <td th:text="${object.completed}"></td>
+                        <td>
+                            <ul>
+                                <li th:each="image : ${object.imagesObjects}">
+                                    <img th:src="@{/objects/images/{id}(id=${image.id})}" th:alt="${image.name}"/>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <H3>Создать новый объект</H3>
+                <form action="/objects/create" method="post" enctype="multipart/form-data">
+                    Название: <input type="text" name="name"/><br><br>
+                    Описание: <input type="text" name="description"/><br><br>
+                    Первое фото: <input type="file" name="file1"/><br><br>
+                    Первое фото: <input type="file" name="file2"/><br><br>
+                    Первое фото: <input type="file" name="file3"/><br><br>
+                    Первое фото: <input type="file" name="file4"/><br><br>
+                    Первое фото: <input type="file" name="file5"/><br><br>
+                    Первое фото: <input type="file" name="file6"/><br><br>
+                    Первое фото: <input type="file" name="file7"/><br><br>
+                    Первое фото: <input type="file" name="file8"/><br><br>
+                    Первое фото: <input type="file" name="file9"/><br><br>
+                    Первое фото: <input type="file" name="file10"/><br><br>
+                    <input type="submit" value="Добавить"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<div th:insert="footer :: footer"></div>
+</body>
+</html>

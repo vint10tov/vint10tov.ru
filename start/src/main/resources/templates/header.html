@@ -1,0 +1,38 @@
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+    <header th:fragment="header">
+        <div class="container">
+            <div class="header-row">
+                <img class="logo" th:src="@{../img/logo.png}" alt="logo"/>
+                <div class="logo-text">
+                    <h2 class="up-logo-text">ИП Десятов Виктор</h2>
+                    <h5 class="down-logo-text">Отделка Инженерные сети Проектирование</h5>
+                </div>
+                <div class="menu">
+                    <a href="/" class="links">
+                        <h3>Главная</h3>
+                    </a>
+                </div>
+                <div class="menu">
+                    <a href="/services" class="links">
+                        <h3>Услуги</h3>
+                    </a>
+                </div>
+                <div class="menu">
+                    <a href="/objects" class="links">
+                        <h3>Объекты</h3>
+                    </a>
+                </div>
+                <div class="menu">
+                    <a href="/contacts" class="links">
+                        <h3>Контакты</h3>
+                    </a>
+                </div>
+                <div class="header-sign-in">
+                    <a href="/login" class="header-button">
+                        ВОЙТИ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+</html>

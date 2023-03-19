@@ -1,0 +1,26 @@
+server:
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/v10tovtest
+    username: vint
+    password: ~Q+~%o3Zj+o}R*H4+X-aVKb+
+    driverClassName: com.mysql.cj.jdbc.Driver
+    initialize: true
+    initialization-mode: always
+    sql-script-encoding: UTF-8
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      force-request: true
+      force-response: true
+  main:
+    banner-mode: off

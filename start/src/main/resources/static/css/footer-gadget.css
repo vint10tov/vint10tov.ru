@@ -1,0 +1,18 @@
+@media (max-width: 1140px) {
+    .container {
+        width: 0;
+    }
+    footer {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+    .footer-row {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+    .logo-text {
+        margin-right: 0;
+    }
+
+}

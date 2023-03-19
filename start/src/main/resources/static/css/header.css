@@ -1,0 +1,56 @@
+header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.container {
+    width: 1110px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+.logo-text {
+    margin-right: 80px
+}
+.up-logo-text {
+    text-decoration: underline;
+    letter-spacing: 0.15em;
+    margin: 0;
+    margin-bottom: 0px;
+}
+.down-logo-text {
+    margin: 0;
+    margin-bottom: 0px;
+    white-space: nowrap;
+}
+.menu {
+    margin-right: 40px
+}
+.links {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.header-button {
+    display: inline-block;
+    height: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    border: 3px solid #e2c20d;
+    border-radius: 50px;
+    color: rgb(0, 0, 0);
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 44px;
+    text-transform: uppercase;
+    text-decoration: none;
+}

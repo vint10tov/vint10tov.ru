@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v10tov.ru</title>
+    <link rel="shortcut icon" href="./static/img/favicon.ico" type="image/x-icon" th:href="@{/img/favicon.ico}">
+    <link href="./static/css/header.css" rel="stylesheet" th:href="@{/css/header.css}"/>
+    <link href="./static/css/footer.css" rel="stylesheet" th:href="@{/css/footer.css}"/>
+    <link href="./static/css/price.css" rel="stylesheet" th:href="@{/css/price.css}"/>
+    <link href="./static/css/header-gadget.css" rel="stylesheet" th:href="@{/css/header-gadget.css}"/>
+    <link href="./static/css/footer-gadget.css" rel="stylesheet" th:href="@{/css/footer-gadget.css}"/>
+    <link href="./static/css/price-gadget.css" rel="stylesheet" th:href="@{/css/price-gadget.css}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+<div th:insert="header :: header"></div>
+<section>
+    <div class="background">
+        <div class="section">
+            <div class="Links">
+                <a href="/services/price-electrician" class="link">
+                    <h3>Прайс на электромонтажные работы</h3>
+                </a>
+                <a href="/services/price-finishing" class="link">
+                    <h3>Прайс на отделочные работы</h3>
+                </a>
+                <a href="/services/price-plumbing" class="link">
+                    <h3>Прайс на сантехнические работы</h3>
+                </a>
+                <a href="/services/price-air-conditioners" class="link">
+                    <h3>Прайс на установку сплит систем</h3>
+                </a>
+                <a href="/services/price-design" class="link">
+                    <h3>Прайс на проектирование</h3>
+                </a>
+            </div>
+            <div>
+                <H1 id="priceActivity"></H1>
+                <table class="table" >
+                    <thead>
+                    <tr>
+                        <th>Артикул</th>
+                        <th>Раздел</th>
+                        <th>Название услуги</th>
+                        <th>Ед.Изм.</th>
+                        <th>Цена за Ед.</th>
+                    </tr>
+                    </thead>
+                    <tbody th:each="element : ${price}">
+                    <tr>
+                        <td th:text="${element.id}" />
+                        <td th:text="${element.view}" />
+                        <td th:text="${element.names}" />
+                        <td th:text="${element.unit}" />
+                        <td th:text="${element.price}" />
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<div th:insert="footer :: footer"></div>
+<script type="text/javascript" th:src="@{/js/price.js}"></script>
+</body>
+</html>
