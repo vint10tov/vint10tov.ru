@@ -13,9 +13,7 @@ import ru.v10tov.repository.ObjectRepository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.io.IOException;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -31,21 +29,6 @@ public class ObjectService {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public List<Long> getImageIdsByObjectId(Long objectId) {
-        ObjectEntity objectEntity = entityManager.find(ObjectEntity.class, objectId);
-        if (objectEntity != null) {
-            return objectEntity.getImagesObjects()
-                    .stream()
-                    .map(ImagesObject::getId)
-                    .collect(Collectors.toList());
-        }
-        return Collections.emptyList();
-    }
-//    Код извлекает объект ObjectEntity по его идентификатору с помощью EntityManager, а затем извлекает все
-//    связанные с ним объекты ImagesObject с помощью метода getImagesObjects(). Метод map() используется для
-//    извлечения идентификатора каждого объекта ImagesObject в списке, а затем метод collect() используется
-//    для создания списка всех идентификаторов изображений. Если ObjectEntity не существует, возвращается
-//    пустой список.
 
     public List<ObjectEntity> objectEntityList () {
         return (List<ObjectEntity>) objectRepository.findAll();

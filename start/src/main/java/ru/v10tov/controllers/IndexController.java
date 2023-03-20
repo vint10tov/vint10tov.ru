@@ -6,7 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import ru.v10tov.entity.ObjectEntity;
+import ru.v10tov.entity.UserEntity;
 import ru.v10tov.services.ObjectService;
+import ru.v10tov.services.UserService;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class IndexController {
 
+    private final UserService userService;
     private final ObjectService objectService;
 
     @GetMapping("/")

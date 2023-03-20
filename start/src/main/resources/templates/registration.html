@@ -20,8 +20,18 @@
 <body>
   <div th:insert="header :: header"></div>
     <section>
-      <H4>Авторизация</H4>
-      <form th:action="@{/registration}" method="post">
+      <H4>Регистрация Клиента</H4>
+      <form th:action="@{/admin/user/registration/client}" method="post">
+        <div><label> Email : <input type="email" name="email"/> </label></div>
+        <div><label> Phone number: <input type="text" name="phone_number"/> </label></div>
+        <div><label> Имя пользователя: <input type="text" name="last_name"/> </label></div>
+        <div><label> Фамилия пользователя: <input type="text" name="first_name"/> </label></div>
+        <div><label> Password: <input type="password" name="password"/> </label></div>
+        <div><input type="hidden" name="_csrf" value="${_csrf.token}"/></div>
+        <div><input type="submit" value="Зарегистрировать"/></div>
+      </form>
+      <H4>Регистрация Мастера</H4>
+      <form th:action="@{/admin/user/registration/master}" method="post">
         <div><label> Email : <input type="email" name="email"/> </label></div>
         <div><label> Phone number: <input type="text" name="phone_number"/> </label></div>
         <div><label> Имя пользователя: <input type="text" name="last_name"/> </label></div>
