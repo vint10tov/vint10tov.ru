@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ru.v10tov.entity.ObjectEntity;
 import ru.v10tov.entity.PriceEntity;
 import ru.v10tov.repository.PriceRepository;
 

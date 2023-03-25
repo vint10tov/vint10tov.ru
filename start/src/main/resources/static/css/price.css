@@ -9,10 +9,18 @@ body {
     background-image: url(./../img/home.jpg);
     background-size: cover;
     background-position:left;
+    background-repeat: repeat;
 }
 .section {
     padding-top: 40px;
     padding-left: 40px;
+}
+ .container {
+     padding-top: 40px;
+     padding-left: 40px;
+     min-width: 90%;
+     max-width: 100%;
+     padding: 0 15px;
 }
 .link {
     text-decoration: none;

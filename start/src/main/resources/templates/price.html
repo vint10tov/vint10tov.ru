@@ -38,9 +38,9 @@
                     <h3>Прайс на проектирование</h3>
                 </a>
             </div>
-            <div>
-                <H1 id="priceActivity"></H1>
-                <table class="table" >
+            <div class="container">
+                <table class="table">
+                    <H1 id="priceActivity"></H1>
                     <thead>
                     <tr>
                         <th>Артикул</th>
@@ -52,11 +52,11 @@
                     </thead>
                     <tbody th:each="element : ${price}">
                     <tr>
-                        <td th:text="${element.id}" />
-                        <td th:text="${element.view}" />
-                        <td th:text="${element.names}" />
-                        <td th:text="${element.unit}" />
-                        <td th:text="${element.price}" />
+                        <td data-label="Артикул" th:text="${element.id}" />
+                        <td data-label="Раздел" th:text="${element.view}" />
+                        <td data-label="Название услуги" th:text="${element.names}" />
+                        <td data-label="Ед.Изм." th:text="${element.unit}" />
+                        <td data-label="Цена за Ед." th:text="${element.price}" />
                     </tr>
                     </tbody>
                 </table>

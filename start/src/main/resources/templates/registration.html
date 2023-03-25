@@ -20,27 +20,32 @@
 <body>
   <div th:insert="header :: header"></div>
     <section>
-      <H4>Регистрация Клиента</H4>
-      <form th:action="@{/admin/user/registration/client}" method="post">
-        <div><label> Email : <input type="email" name="email"/> </label></div>
-        <div><label> Phone number: <input type="text" name="phone_number"/> </label></div>
-        <div><label> Имя пользователя: <input type="text" name="last_name"/> </label></div>
-        <div><label> Фамилия пользователя: <input type="text" name="first_name"/> </label></div>
-        <div><label> Password: <input type="password" name="password"/> </label></div>
-        <div><input type="hidden" name="_csrf" value="${_csrf.token}"/></div>
-        <div><input type="submit" value="Зарегистрировать"/></div>
-      </form>
-      <H4>Регистрация Мастера</H4>
-      <form th:action="@{/admin/user/registration/master}" method="post">
-        <div><label> Email : <input type="email" name="email"/> </label></div>
-        <div><label> Phone number: <input type="text" name="phone_number"/> </label></div>
-        <div><label> Имя пользователя: <input type="text" name="last_name"/> </label></div>
-        <div><label> Фамилия пользователя: <input type="text" name="first_name"/> </label></div>
-        <div><label> Password: <input type="password" name="password"/> </label></div>
-        <div><input type="hidden" name="_csrf" value="${_csrf.token}"/></div>
-        <div><input type="submit" value="Зарегистрировать"/></div>
-      </form>
+      <div id="block1" style="display:none;">
+        <H4>Регистрация Клиента</H4>
+        <form th:action="@{/registration/client}" method="post">
+          <div><label> Email : <input type="email" name="email"/> </label></div>
+          <div><label> Phone number: <input type="text" name="phonenumber"/> </label></div>
+          <div><label> Имя пользователя: <input type="text" name="lastname"/> </label></div>
+          <div><label> Фамилия пользователя: <input type="text" name="firstname"/> </label></div>
+          <div><label> Password: <input type="password" name="password"/> </label></div>
+          <div><input type="hidden" name="_csrf" value="${_csrf.token}"/></div>
+          <div><input type="submit" value="Зарегистрировать"/></div>
+        </form>
+      </div>
+      <div id="block2" style="display:none;">
+        <H4>Регистрация Мастера</H4>
+        <form th:action="@{/registration/master}" method="post">
+          <div><label> Email : <input type="email" name="email"/> </label></div>
+          <div><label> Phone number: <input type="text" name="phonenumber"/> </label></div>
+          <div><label> Имя пользователя: <input type="text" name="lastname"/> </label></div>
+          <div><label> Фамилия пользователя: <input type="text" name="firstname"/> </label></div>
+          <div><label> Password: <input type="password" name="password"/> </label></div>
+          <div><input type="hidden" name="_csrf" value="${_csrf.token}"/></div>
+          <div><input type="submit" value="Зарегистрировать"/></div>
+        </form>
+      </div>
     </section>
   <div th:insert="footer :: footer"></div>
+  <script type="text/javascript" th:src="@{/js/registration.js}"></script>
 </body>
 </html>

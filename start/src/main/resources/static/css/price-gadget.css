@@ -1,5 +1,26 @@
 @media (max-width: 1140px) {
     .background {
+        height: 100%;
         background: none
+    }
+    .section {
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+    .container table thead {
+        display: none;
+    }
+    .container table tr {
+        display: block;
+    }
+    .container table td {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+    }
+    .container table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-right: 20px;
     }
 }

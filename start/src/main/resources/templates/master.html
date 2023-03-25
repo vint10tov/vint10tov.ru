@@ -9,10 +9,10 @@
   <link rel="shortcut icon" href="./static/img/favicon.ico" type="image/x-icon" th:href="@{/img/favicon.ico}">
   <link href="./static/css/header.css" rel="stylesheet" th:href="@{/css/header.css}"/>
   <link href="./static/css/footer.css" rel="stylesheet" th:href="@{/css/footer.css}"/>
-  <link href="./static/css/login.css" rel="stylesheet" th:href="@{/css/login.css}"/>
+  <link href="./static/css/master.css" rel="stylesheet" th:href="@{/css/master.css}"/>
   <link href="./static/css/header-gadget.css" rel="stylesheet" th:href="@{/css/header-gadget.css}"/>
   <link href="./static/css/footer-gadget.css" rel="stylesheet" th:href="@{/css/footer-gadget.css}"/>
-  <link href="./static/css/login-gadget.css" rel="stylesheet" th:href="@{/css/login-gadget.css}"/>
+  <link href="./static/css/master-gadget.css" rel="stylesheet" th:href="@{/css/master-gadget.css}"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
@@ -20,18 +20,8 @@
 <body>
 <div th:insert="header :: header"></div>
 <section>
-  <div class="background">
-    <div class="section">
-      <H4>Авторизация</H4>
-      <a class="nav-link" th:href="@{/logout}" th:text="Выйти"></a>
-      <form th:action="@{/login}" method="post">
-        <div><label> Email : <input type="email" name="username"/> </label></div>
-        <div><label> Password: <input type="password" name="password"/> </label></div>
-        <div><input type="hidden" name="_csrf" value="${_csrf.token}"/></div>
-        <div><input type="submit" value="Вход"/></div>
-      </form>
-    </div>
-  </div>
+    <a class="nav-link" th:href="@{/logout}" th:text="Выйти"></a>
+    <H4>Панель Мастера</H4>
 </section>
 <div th:insert="footer :: footer"></div>
 </body>

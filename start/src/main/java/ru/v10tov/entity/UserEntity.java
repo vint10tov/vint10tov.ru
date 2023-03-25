@@ -22,22 +22,22 @@ public class UserEntity implements UserDetails {
     private Long id;
     @Column(name = "email", unique = true)
     private String email;
-    @Column(name = "phone_number")
+    @Column(name = "phonenumber")
     private String phoneNumber;
-    @Column(name = "last_name")
+    @Column(name = "lastname")
     private String lastName;
-    @Column(name = "first_name")
+    @Column(name = "firstname")
     private String firstName;
     @Column(name = "active")
     private boolean active;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "image_id")
+    @JoinColumn(name = "imageid")
     private ImagesObject avatar;
     @Column(name = "password", length = 1000)
     private String password;
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_role",
-    joinColumns = @JoinColumn(name = "user_id"))
+    @CollectionTable(name = "userrole",
+    joinColumns = @JoinColumn(name = "userid"))
     @Enumerated(EnumType.STRING)
     private Set<Role> roles = new HashSet<>();
     private LocalDateTime dateOfCreated;
@@ -58,7 +58,7 @@ public class UserEntity implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return roles;
     }
 
     @Override

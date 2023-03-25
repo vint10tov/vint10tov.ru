@@ -18,20 +18,6 @@ public class UserService {
     private final UserEntityRepository userEntityRepository;
     private final PasswordEncoder passwordEncoder;
 
-
-    // Create a new admin user
-//    public void createAdminUser() {
-//        UserEntity adminUser = new UserEntity();
-//        adminUser.setFirstName("Viktor");
-//        adminUser.setLastName("Des");
-//        adminUser.setEmail("admin@example.com");
-//        adminUser.setPassword(passwordEncoder.encode("885596tov@"));
-//        adminUser.setActive(true);
-//        adminUser.setRoles(Collections.singleton(Role.ROLE_ADMIN));
-        // Save the user to the database
-//        userEntityRepository.save(adminUser);
-//    }
-
     public boolean createMaster(UserEntity user) {
         String email = user.getEmail();
         if (userEntityRepository.findByEmail(email) != null) return false;

@@ -21,6 +21,7 @@
 <div th:insert="header :: header"></div>
 <section>
     <div>
+        <a class="nav-link" th:href="@{/logout}" th:text="Выйти"></a>
         <H4>Панель администратора</H4>
         <table class="table" >
             <thead>
@@ -36,22 +37,22 @@
             <tbody th:each="element : ${users}">
             <tr>
                 <td th:text="${element.email}" />
-                <td th:text="${element.phone_number}" />
                 <td th:text="${element.active}" />
+                <td th:text="${element.roles}" />
                 <td>
                     <ul>
-                        <li th:each="roles : ${users.user-role}">
-                            <img th:text="${role}"/>
+                        <li>
+                            <img/>
                         </li>
                     </ul>
                 </td>
                 <td>
-                    <form th:action="@/admin/user/ban/{id}(id=${element.id})" method="post">
-                        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                        <input type="submit" value="Бан"/>
-                    </form>
+<!--                    <form th:action="@/admin/user/ban/{id}(id=${element.id})" method="post">-->
+<!--                        <input type="hidden" name="_csrf" value="${_csrf.token}"/>-->
+<!--                        <input type="submit" value="Бан"/>-->
+<!--                    </form>-->
                 </td>
-                <td><a th:href="@/admin/user/edit/{user}(id=${element.id})"/></td>
+                <td></td>
             </tr>
             </tbody>
         </table>

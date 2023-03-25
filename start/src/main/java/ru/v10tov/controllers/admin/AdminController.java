@@ -1,7 +1,6 @@
 package ru.v10tov.controllers.admin;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +15,6 @@ import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
-@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 public class AdminController {
 
     private final UserService userService;
@@ -44,28 +42,5 @@ public class AdminController {
     public String userEdit(@RequestParam("userId") UserEntity userEntity, @RequestParam Map<String, String> form){
         userService.changeUserRoles(userEntity, form);
         return "redirect:/admin";
-    }
-
-    @GetMapping("/admin/user/registration")
-    public String registration() {
-        return "registration";
-    }
-
-    @PostMapping("/admin/user/registration/client")
-    public String createClient(UserEntity userEntity, Model model) {
-        if (!userService.createClient(userEntity)) {
-            model.addAttribute("errorMessage", "Пользователь с email: " + userEntity.getEmail() + "уже существует");
-            return "registration";
-        }
-        return "redirect:/admin/user/registration";
-    }
-
-    @PostMapping("/admin/user/registration/master")
-    public String createMaster(UserEntity userEntity, Model model) {
-        if (!userService.createMaster(userEntity)) {
-            model.addAttribute("errorMessage", "Пользователь с email: " + userEntity.getEmail() + "уже существует");
-            return "registration";
-        }
-        return "redirect:/admin/user/registration";
     }
 }
