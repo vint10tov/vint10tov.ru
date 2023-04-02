@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="google-site-verification" content="CHzGhd890Mx5H-5r-WwkVhxqXBb4BSRydhpdnLq19iE" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v10tov.ru</title>
+  <link rel="shortcut icon" href="./static/img/favicon.ico" type="image/x-icon" th:href="@{/img/favicon.ico}">
+  <link href="./static/css/header.css" rel="stylesheet" th:href="@{/css/header.css}"/>
+  <link href="./static/css/footer.css" rel="stylesheet" th:href="@{/css/footer.css}"/>
+  <link href="./static/css/admin-objects.css" rel="stylesheet" th:href="@{/css/admin-objects.css}"/>
+  <link href="./static/css/header-gadget.css" rel="stylesheet" th:href="@{/css/header-gadget.css}"/>
+  <link href="./static/css/footer-gadget.css" rel="stylesheet" th:href="@{/css/footer-gadget.css}"/>
+  <link href="./static/css/admin-objects-gadget.css" rel="stylesheet" th:href="@{/css/admin-objects-gadget.css}"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+<div th:insert="header :: header"></div>
+<section>
+  <div class="background">
+    <div class="section">
+      <a class="nav-link" th:href="@{/logout}" th:text="Выйти"></a>
+      <div>
+        <H3>Создать новый объект</H3>
+        <form th:action="@{/admin/objects/create}" method="post" enctype="multipart/form-data">
+          Дата: <input type="date" name="date"/><br><br>
+          Название: <input type="text" name="name"/><br><br>
+          Описание: <input type="text" name="description"/><br><br>
+          Завершен: <input type="checkbox" name="completed" value="true"/><br><br>
+          1 фото: <input type="file" name="file1"/><br><br>
+          2 фото: <input type="file" name="file2"/><br><br>
+          3 фото: <input type="file" name="file3"/><br><br>
+          4 фото: <input type="file" name="file4"/><br><br>
+          5 фото: <input type="file" name="file5"/><br><br>
+          6 фото: <input type="file" name="file6"/><br><br>
+          7 фото: <input type="file" name="file7"/><br><br>
+          8 фото: <input type="file" name="file8"/><br><br>
+          9 фото: <input type="file" name="file9"/><br><br>
+          10 фото: <input type="file" name="file10"/><br><br>
+          <input type="submit" value="Добавить"/>
+          <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<div th:insert="footer :: footer"></div>
+</body>
+</html>

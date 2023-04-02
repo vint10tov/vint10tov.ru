@@ -9,10 +9,10 @@
     <link rel="shortcut icon" href="./static/img/favicon.ico" type="image/x-icon" th:href="@{/img/favicon.ico}">
     <link href="./static/css/header.css" rel="stylesheet" th:href="@{/css/header.css}"/>
     <link href="./static/css/footer.css" rel="stylesheet" th:href="@{/css/footer.css}"/>
-    <link href="./static/css/admin.css" rel="stylesheet" th:href="@{/css/admin.css}"/>
+    <link href="./static/css/admin-price.css" rel="stylesheet" th:href="@{/css/admin-price.css}"/>
     <link href="./static/css/header-gadget.css" rel="stylesheet" th:href="@{/css/header-gadget.css}"/>
     <link href="./static/css/footer-gadget.css" rel="stylesheet" th:href="@{/css/footer-gadget.css}"/>
-    <link href="./static/css/admin-gadget.css" rel="stylesheet" th:href="@{/css/admin-gadget.css}"/>
+    <link href="./static/css/admin-price-gadget.css" rel="stylesheet" th:href="@{/css/admin-price-gadget.css}"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
@@ -23,17 +23,13 @@
     <div class="background">
         <div class="section">
             <a class="nav-link" th:href="@{/logout}" th:text="Выйти"></a>
-            <H2>Панель администратора</H2>
-            <div class="Links">
-                <a href="/admin/price" class="link">
-                    <h3>Редактирование прайса</h3>
-                </a>
-                <a href="/admin/objects" class="link">
-                    <h3>Редактирование объектов</h3>
-                </a>
-                <a href="/admin/users" class="link">
-                    <h3>Управление пользователями</h3>
-                </a>
+            <div>
+                <H3>Загрузка прайса</H3>
+                <form th:action="@{/admin/price/create}" method="post" enctype="multipart/form-data">
+                    Загрузить фаил: <input type="file" name="file"/><br><br>
+                    <input type="submit" value="Загрузить"/>
+                    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                </form>
             </div>
         </div>
     </div>

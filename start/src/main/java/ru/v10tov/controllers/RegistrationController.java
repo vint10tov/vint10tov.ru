@@ -30,7 +30,7 @@ public class RegistrationController {
             model.addAttribute("errorMessage", "Пользователь с email: " + userEntity.getEmail() + "уже существует");
             return "registration";
         }
-        return "redirect:/registration";
+        return "redirect:/login";
     }
 
     @PostMapping("/registration/master")
@@ -39,6 +39,6 @@ public class RegistrationController {
             model.addAttribute("errorMessage", "Пользователь с email: " + userEntity.getEmail() + "уже существует");
             return "registration";
         }
-        return "redirect:/registration";
+        return "redirect:/login";
     }
 }

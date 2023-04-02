@@ -23,7 +23,6 @@
   <div class="background">
     <div class="section">
       <H4>Авторизация</H4>
-      <a class="nav-link" th:href="@{/logout}" th:text="Выйти"></a>
       <form th:action="@{/login}" method="post">
         <div><label> Email : <input type="email" name="username"/> </label></div>
         <div><label> Password: <input type="password" name="password"/> </label></div>

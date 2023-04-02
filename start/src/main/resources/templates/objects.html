@@ -21,51 +21,21 @@
 <section>
     <div class="background">
         <div class="section">
-            <div>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Object Name</th>
-                        <th>Date</th>
-                        <th>Description</th>
-                        <th>Completed</th>
-                        <th>Images</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:each="object : ${objects}">
-                        <td th:text="${object.name}"></td>
-                        <td th:text="${object.date}"></td>
-                        <td th:text="${object.description}"></td>
-                        <td th:text="${object.completed}"></td>
-                        <td>
-                            <ul>
-                                <li th:each="image : ${object.imagesObjects}">
-                                    <img th:src="@{/objects/images/{id}(id=${image.id})}" th:alt="${image.name}"/>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div>
-                <H3>Создать новый объект</H3>
-                <form action="/objects/create" method="post" enctype="multipart/form-data">
-                    Название: <input type="text" name="name"/><br><br>
-                    Описание: <input type="text" name="description"/><br><br>
-                    Первое фото: <input type="file" name="file1"/><br><br>
-                    Первое фото: <input type="file" name="file2"/><br><br>
-                    Первое фото: <input type="file" name="file3"/><br><br>
-                    Первое фото: <input type="file" name="file4"/><br><br>
-                    Первое фото: <input type="file" name="file5"/><br><br>
-                    Первое фото: <input type="file" name="file6"/><br><br>
-                    Первое фото: <input type="file" name="file7"/><br><br>
-                    Первое фото: <input type="file" name="file8"/><br><br>
-                    Первое фото: <input type="file" name="file9"/><br><br>
-                    Первое фото: <input type="file" name="file10"/><br><br>
-                    <input type="submit" value="Добавить"/>
-                </form>
+            <div th:each="object : ${objects}">
+                <div class="objects">
+                    <H2 th:text="${object.name}"></H2>
+                    <H4 th:text="${object.date}"></H4>
+                    <H5 th:switch="${object.completed}">
+                        <span class="completed" th:case="${true}" th:text="Завершен"/>
+                        <span class="current" th:case="${false}" th:text="Текущий"/>
+                    </H5>
+                </div>
+                <div>
+                    <p th:text="${object.description}"></p>
+                </div>
+                <div class="object-images" th:each="image : ${object.imagesObjects}">
+                    <img class="images" th:src="@{/objects/images/{id}(id=${image.id})}" th:alt="${image.name}"/>
+                </div>
             </div>
         </div>
     </div>
